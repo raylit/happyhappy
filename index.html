@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset = "utf-8">
+	<link rel="stylesheet" type="text/css" href="normalize.css">
+	<title>HAPPY BIRTHDAY TO ME</title>
+	<style>
+		body{ background: rgb(255,0,175); }
+		a:link, a:active, a:visited, a:hover{ text-decoration: none; }
+		a:link, a:active, a:visited { color: yellow; }
+		a:hover{ background:yellow; color:blue; }
+
+		#videoBox {
+			display: none;
+			position: absolute; left: calc(50% - 427px); top: calc(50% - 150px); width:853px;
+			font-size:1.5em; line-height:480px; text-align: center; 
+		}
+		#videoBox a:link, a:active, a:visited{ color: white; }
+		#videoBox a:hover{background:white; color:black;}
+		#pressure {width:853px;}
+		#simul {
+			transition: 1s;
+			opacity:0;
+			width:100%;
+			position:absolute;
+			top:0px;
+			left:0px;
+		}
+
+		#univ {
+			width:100%; height:100%; display:block; margin:auto;
+			transition: 1s;
+		}
+
+		#title {
+			transition: 2s;
+			transition-delay: 1s;
+			display: block;
+			position: absolute;
+			left: calc(50% - 640px);
+			top:20px;
+			opacity: 0;
+		}
+
+		#baaAm {
+
+			width:50px; height:50px;
+			position: absolute;
+			
+			animation: boom 3s cubic-bezier(.48,.15,.01,.94);
+			animation-iteration-count: infinite;
+			animation-play-state: running;
+		}
+		#baaAm a{display:block; text-align:center; font-size:45px; line-height:50px;}
+		#barCord {width:100%;}
+		#whiteBox {
+			opacity:0.5;
+			width:0px; height:0px;
+			background: white;
+			position: absolute;
+			animation: drop 5s cubic-bezier(.48,.15,.01,.94);
+			animation-iteration-count: infinite;
+			animation-play-state: running;
+			}
+
+		#whiteBoxx {
+			opacity:0.5;
+			width:0px; height:0px;
+			background: white;
+			position: absolute;
+			animation: dropx 5s cubic-bezier(.48,.15,.01,.94);
+			animation-iteration-count: infinite;
+			animation-play-state: running;
+			}
+
+		#whiteBoxxx {
+			opacity:0.5;
+			width:0px; height:0px;
+			background: white;
+			position: absolute;
+			animation: dropxx 5s cubic-bezier(.48,.15,.01,.94);
+			animation-iteration-count: infinite;
+			animation-play-state: running;
+			}
+
+		#whiteBoxxxx {
+			opacity:0.5;
+			width:0px; height:0px;
+			background: white;
+			position: absolute;
+			animation: dropxxx 5s cubic-bezier(.48,.15,.01,.94);
+			animation-iteration-count: infinite;
+			animation-play-state: running;
+			}
+
+		#whiteBoxxxxx {
+			opacity:0.5;
+			width:0px; height:0px;
+			background: white;
+			position: absolute;
+			animation: dropxxxx 5s cubic-bezier(.48,.15,.01,.94);
+			animation-iteration-count: infinite;
+			animation-play-state: running;
+			}
+
+		#whiteBoy {
+			opacity:0.5;
+			width:0px; height:0px;
+			background: white;
+			position: absolute;
+			animation: dropy 5s cubic-bezier(.48,.15,.01,.94);
+			animation-iteration-count: infinite;
+			animation-play-state: running;
+			}
+
+		#whiteBoyy {
+			opacity:0.5;
+			width:0px; height:0px;
+			background: white;
+			position: absolute;
+			animation: dropyy 5s cubic-bezier(.48,.15,.01,.94);
+			animation-iteration-count: infinite;
+			animation-play-state: running;
+			}
+
+		#whiteBoyyy {
+			opacity:0.5;
+			width:0px; height:0px;
+			background: white;
+			position: absolute;
+			animation: dropyyy 5s cubic-bezier(.48,.15,.01,.94);
+			animation-iteration-count: infinite;
+			animation-play-state: running;
+			}
+
+		#whiteBoyyyy {
+			opacity:0.5;
+			width:0px; height:0px;
+			background: white;
+			position: absolute;
+			animation: dropyyyy 5s cubic-bezier(.48,.15,.01,.94);
+			animation-iteration-count: infinite;
+			animation-play-state: running;
+			}
+
+		#whiteBoyyyyy {
+			opacity:0.5;
+			width:0px; height:0px;
+			background: white;
+			position: absolute;
+			animation: dropyyyyy 5s cubic-bezier(.48,.15,.01,.94);
+			animation-iteration-count: infinite;
+			animation-play-state: running;
+			}
+
+		#whiteBoz {
+			opacity:0.5;
+			width:0px; height:0px;
+			background: white;
+			position: absolute;
+			animation: dropz 5s cubic-bezier(.48,.15,.01,.94);
+			animation-iteration-count: infinite;
+			animation-play-state: running;
+			}
+		#button {
+			background: rgb(0,0,175);
+			position: absolute;
+			top: 250px;
+			width:100%; height:50px;
+		}
+
+		#birthDay {
+			display: none;
+			height:50px;
+			position:absolute;
+			top: 250px; 
+			font-size: 4em;
+			font-weight: bold;
+			line-height: 140px;
+
+			color: white;
+			animation: happy 4s ;
+			animation-iteration-count: infinite;
+			animation-play-state: running;
+
+
+		}
+
+		@keyframes drop {
+			0%, 100%{left: 0px; top: 0px;}
+			50% {left: calc(100% - 25px); top: 0px;}
+		}
+
+		@keyframes dropx {
+			0%, 100%{left: 0px; top: 150px;}
+			50% {left: calc(100% - 15px); top: 150px;}
+		}
+
+		@keyframes dropxx {
+			0%, 100%{left: 0px; top: 300px;}
+			50% {left: calc(100% - 25px); top: 300px;}
+		}
+
+		@keyframes dropxxx {
+			0%, 100%{left: 0px; top: 325px;}
+			50% {left: calc(100% - 25px); top: 325px;}
+		}
+
+		@keyframes dropxxxx {
+			0%, 100%{left: 0px; top: 400px;}
+			50% {left: calc(100% - 25px); top: 400px;}
+		}
+
+		@keyframes dropy {
+			0%, 100%{left: 0px; top: 450px;}
+			50% {left: calc(100% - 25px); top: 450px;}
+		}
+
+		@keyframes dropyy {
+			0%, 100%{left: 0px; top: 625px;}
+			50% {left: calc(100% - 25px); top: 625px;}
+		}
+
+		@keyframes dropyyy {
+			0%, 100%{left: 0px; top: 705px;}
+			50% {left: calc(100% - 25px); top: 705px;}
+		}
+
+		@keyframes dropyyyy {
+			0%, 100%{left: 0px; top: 745px;}
+			50% {left: calc(100% - 25px); top: 745px;}
+		}
+
+		@keyframes dropyyyyy {
+			0%, 100%{left: 0px; top: 650px;}
+			50% {left: calc(100% - 25px); top: 650px;}
+		}
+
+		@keyframes dropz {
+			0%, 100%{left: 0px; top: 45px;}
+			50% {left: calc(100% - 25px); top: 45px;}
+		}
+
+		@keyframes boom {
+			0%		{background-color:rgb(255,200,0); left: 0px; top: 0px;}
+			25%		{background-color:rgb(255,0,150);}
+			50%		{background-color:rgb(255,0,0); left: calc(100% - 50px); top: 0px;}
+			75%		{background-color:rgb(255,150,0);}
+			100%	{background-color:rgb(255,200,0); left: 0px; top: 0px;}
+		}
+
+		@keyframes happy {
+			0%		{color:rgb(0,0,255); left: calc(50% - 540px); top: 250px;}
+			25%		{color:rgb(255,0,150);}
+			50%		{color:rgb(255,0,0); left: calc(50% - 380px); top: 250px;}
+			75%		{color:rgb(255,150,0);}
+			100%	{color:rgb(0,0,255); left: calc(50% - 540px); top: 250px;}
+		}
+
+	</style>
+</head>
+<body>
+
+<div id="barCord">
+	<div id="whiteBox">
+	</div>
+	<div id="whiteBoxx">
+	</div>
+	<div id="whiteBoxxx">
+	</div>
+	<div id="whiteBoxxxx">
+	</div>
+	<div id="whiteBoxxxxx">
+	</div>
+	<div id="whiteBoy">
+	</div>
+	<div id="whiteBoyy">
+	</div>
+	<div id="whiteBoyyy">
+	</div>
+	<div id="whiteBoyyyy">
+	</div>
+	<div id="whiteBoyyyyy">
+	</div>
+	<div id="whiteBoz">
+	</div>
+</div>
+
+<div id="button">
+	<div id="baaAm"><a>?</a>
+	</div>
+</div>
+
+
+<div id="birthDay">
+	<p>
+		<br>
+	성훈아! 10월 8일, 생일 축하해 ^~^</p>
+</div>
+
+
+	
+	<script type="text/javascript">
+		var total = 0;
+
+		for(var i=0;i<120;i++){
+			
+			var t = document.getElementById("whiteBox");
+			
+			var k = t.cloneNode(true);
+			
+			var rand = Math.random();
+
+			k.style.animationDuration = rand + "s";
+			k.style.width = 30 + Math.random()*150 + "px";
+			k.style.height = 150 + "px";
+
+			k.style.background = makeColor();
+			document.body.appendChild(k);
+		}
+
+		for(var i=0;i<180;i++){
+			
+			var t = document.getElementById("whiteBoxx");
+			
+			var k = t.cloneNode(true);
+			
+			var rand = Math.random();
+			
+			k.style.animationDuration = rand + "s";
+			k.style.width = 20 + Math.random()*80 + "px";
+			k.style.height = 100 + "px";
+
+			k.style.background = makeColor();
+			document.body.appendChild(k);
+		}
+
+		for(var i=0;i<300;i++){
+			
+			var t = document.getElementById("whiteBoxxx");
+			
+			var k = t.cloneNode(true);
+			
+			var rand = Math.random();
+			
+			k.style.animationDuration = rand + "s";
+			k.style.width = 5 + Math.random()*20 + "px";
+			k.style.height = 25 + "px";
+
+			k.style.background = makeColor();
+			document.body.appendChild(k);
+		}
+
+		for(var i=0;i<150;i++){
+			
+			var t = document.getElementById("whiteBoxxxx");
+			
+			var k = t.cloneNode(true);
+			
+			var rand = Math.random();
+			
+			k.style.animationDuration = rand + "s";
+			k.style.width = 25 + Math.random()*50 + "px";
+			k.style.height = 75 + "px";
+
+			k.style.background = makeColor();
+			document.body.appendChild(k);
+		}
+
+		for(var i=0;i<180;i++){
+			
+			var t = document.getElementById("whiteBoxxxxx");
+			
+			var k = t.cloneNode(true);
+			
+			var rand = Math.random();
+			
+			k.style.animationDuration = rand + "s";
+			k.style.width = 10 + Math.random()*40 + "px";
+			k.style.height = 50 + "px";
+
+			k.style.background = makeColor();
+			document.body.appendChild(k);
+		}
+
+		for(var i=0;i<60;i++){
+			
+			var t = document.getElementById("whiteBoy");
+			
+			var k = t.cloneNode(true);
+			
+			var rand = Math.random();
+			
+			k.style.animationDuration = rand + "s";
+			k.style.width = 25 + Math.random()*100 + "px";
+			k.style.height = 175 + "px";
+
+			k.style.background = makeColor();
+			document.body.appendChild(k);
+		}
+
+		for(var i=0;i<150;i++){
+			
+			var t = document.getElementById("whiteBoyy");
+			
+			var k = t.cloneNode(true);
+			
+			var rand = Math.random();
+			
+			k.style.animationDuration = rand + "s";
+			k.style.width = 20 + Math.random()*40 + "px";
+			k.style.height = 80 + "px";
+
+			k.style.background = makeColor();
+			document.body.appendChild(k);
+		}
+
+		for(var i=0;i<200;i++){
+			
+			var t = document.getElementById("whiteBoyyy");
+			
+			var k = t.cloneNode(true);
+			
+			var rand = Math.random();
+			
+			k.style.animationDuration = rand + "s";
+			k.style.width = 10 + Math.random()*20 + "px";
+			k.style.height = 40 + "px";
+
+			k.style.background = makeColor();
+			document.body.appendChild(k);
+		}
+
+		for(var i=0;i<30;i++){
+			
+			var t = document.getElementById("whiteBoyyyy");
+			
+			var k = t.cloneNode(true);
+			
+			var rand = Math.random();
+			
+			k.style.animationDuration = rand + "s";
+			k.style.width = 100 + Math.random()*150 + "px";
+			k.style.height = 300 + "px";
+
+			k.style.background = makeColor();
+			document.body.appendChild(k);
+		}
+
+		for(var i=0;i<30;i++){
+			
+			var t = document.getElementById("whiteBoyyyyy");
+			
+			var k = t.cloneNode(true);
+			
+			var rand = Math.random();
+			
+			k.style.animationDuration = rand + "s";
+			k.style.width = 45 + Math.random()*90 + "px";
+			k.style.height = 180 + "px";
+
+			k.style.background = makeColor();
+			document.body.appendChild(k);
+		}
+
+		for(var i=0;i<30;i++){
+			
+			var t = document.getElementById("whiteBoz");
+			
+			var k = t.cloneNode(true);
+			
+			var rand = Math.random();
+			
+			k.style.animationDuration = rand + "s";
+			k.style.width = 30 + Math.random()*90 + "px";
+			k.style.height = 150 + "px";
+
+			k.style.background = makeColor();
+			document.body.appendChild(k);
+		}
+
+		function makeColor(){
+				var a = Math.random()*255;
+				var b = Math.random()*255;
+				var c = Math.random()*255;
+				var text = "rgb("+ 255 + ","+ b +","+ c +")";
+				return text;
+		}
+
+
+		var toggle = "off"
+		button.onclick = function(){
+			if(toggle == "off"){
+				toggle = "on"
+				baaAm.style.animationPlayState = "paused";
+
+			}else if(toggle == "on"){
+				toggle = "off"
+				baaAm.style.animationPlayState = "running";
+				
+			}
+
+		}
+
+		baaAm.onclick = function(){
+
+			baaAm.style.display = "none";
+			button.style.background = "rgb(255,0,175)";
+
+			birthDay.style.display = "block";
+			button.sytle.height = 500 + "px";
+			
+		}
+
+
+
+	</script>
+</body>
+</html>
